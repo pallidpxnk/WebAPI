@@ -14,13 +14,21 @@ namespace ContactsAPI.Controllers
         {
             this.dbContext = dbContext;
         }
-
+        /// <summary>
+        /// Get all Contact items.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetContacts()
         {
             return Ok(await dbContext.Contacs.ToListAsync());
         }
-
+        /// <summary>
+        /// Get a specific Contact item.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id:guid}")]
         public async Task<IActionResult> GetContact([FromRoute] Guid id)
@@ -34,8 +42,16 @@ namespace ContactsAPI.Controllers
 
             return Ok(contact);
         }
-
+        /// <summary>
+        /// Creates a Contact item.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>A newly created Contacts item</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> AddContact(AddContactRequest addContactRequest)
         {
             var contact = new Contact()
@@ -52,7 +68,11 @@ namespace ContactsAPI.Controllers
 
             return Ok(contact);
         }
-
+        /// <summary>
+        /// Update a specific Contact item.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("{id:guid}")]
         public async Task<IActionResult> UpdateContact([FromRoute] Guid id, UpdateContactRequest updateContactRequest)
@@ -74,6 +94,11 @@ namespace ContactsAPI.Controllers
             return NotFound();
         }
 
+        /// <summary>
+        /// Deletes a specific Contact item.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id:guid}")]
         public async Task<IActionResult> DeleteContact([FromRoute] Guid id)

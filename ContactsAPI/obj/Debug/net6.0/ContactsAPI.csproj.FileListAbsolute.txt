@@ -41,3 +41,5 @@ D:\projects\ASPNET CORE WEB API\ContactsAPI\ContactsAPI\obj\Debug\net6.0\refint\
 D:\projects\ASPNET CORE WEB API\ContactsAPI\ContactsAPI\obj\Debug\net6.0\ContactsAPI.pdb
 D:\projects\ASPNET CORE WEB API\ContactsAPI\ContactsAPI\obj\Debug\net6.0\ContactsAPI.genruntimeconfig.cache
 D:\projects\ASPNET CORE WEB API\ContactsAPI\ContactsAPI\obj\Debug\net6.0\ref\ContactsAPI.dll
+D:\projects\ASPNET CORE WEB API\ContactsAPI\ContactsAPI\bin\Debug\net6.0\ContactsAPI.xml
+D:\projects\ASPNET CORE WEB API\ContactsAPI\ContactsAPI\obj\Debug\net6.0\ContactsAPI.xml
